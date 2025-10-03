@@ -365,30 +365,33 @@ body.dark #answer{
   }
 
   .box {
-    width: 200px;
+    width: 40%;
     margin: 0 auto; 
   }
 
   #gif {
-    width: 150px;
+    width: 100%;
     margin: auto;
   }
 
-.container {
-    gap: 70px;
-  }
-
   .tile {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
-
-  .key-tile, .enter-key-tile {
     width: 30px;
     height: 30px;
     font-size: 14px;
   }
+
+  .key-tile {
+    width: 33px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+    .enter-key-tile {
+        width: 70px;
+        height: 42px;
+        font-size: 17px;
+    }
+
 
   header img {
     width: 25px; 
