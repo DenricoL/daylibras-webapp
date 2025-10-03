@@ -314,6 +314,7 @@ body.dark #answer{
     margin-top: 20px;
     justify-content: center;
     align-items: center;
+    gap: 15px;
   }
 
   .box {
@@ -369,14 +370,20 @@ body.dark #answer{
     margin: 0 auto; 
   }
 
+@media (max-width: 480px) {
   #gif {
-    width: 100%;
-    margin: auto;
+    width: 150%; 
+    display: block;
+    margin: 0 auto; 
+    position: relative;
+    left: 50%; 
+    transform: translateX(-50%);
   }
+}
 
   .tile {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     font-size: 14px;
   }
 
@@ -420,5 +427,3 @@ body.dark #answer{
     }
 
 }
-
-
