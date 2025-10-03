@@ -405,3 +405,19 @@ body.dark #answer{
   }
   
 }
+
+@media (max-width: 369px) {
+  .key-tile {
+    width: 30px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+    .enter-key-tile {
+        width: 60px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+}
+
