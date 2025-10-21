@@ -1,0 +1,1 @@
+/* javascript pra registrar usuário */

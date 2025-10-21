@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>DayLibras</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<div class="containerheader">
+		<header>
+			<div class="menu">
+				<img src="img/menu.png" width="40px">
+			</div>
+			<a href="modolivre.html" class="logo"> <img src="img/logoalternativa.png"></a>
+			<div class="moon">
+				<img src="img/darkmode.png" width="40px" onclick="toggleDarkMode()">
+			</div>
+		</header>
+	</div>
+
+	<div id="sidebar" class="sidebar">
+		<div class="items">
+			<button></button>
+			<button class="closebtn">x</button>
+			<button onclick="location.href='index.html'">Modo Diário</button>
+			<button onclick="location.href='index.html'">Cadastro</button>
+			<button onclick="location.href='redirect.html'">Tutorial</button>
+			<button onclick="location.href='redirect.html'">Sobre</button>
+		</div>
+	</div>
+
+	<div id="popupVictory" class="popup">
+		<h1>Você venceu!</h1>
+
+		<img src="gifs/fimdejogo/vitoria.gif" width="200px">
+
+		<br>
+		<p>Palavra do Dia: <br>
+			<span id="popup-answer-victory" class="popup-answer"></span>
+		</p>
+		<p>
+			<small class="fechar"><button onclick="closePopup('popupVictory')">X</button></small>
+		</p>
+	</div>
+
+	<div id="popupDefeat" class="popup">
+		<h1>Você perdeu!</h1>
+
+		<img src="gifs/fimdejogo/derrota.gif" width="200px">
+
+		<br>
+		<p>Palavra do dia era: <br>
+			<span id="popup-answer-defeat" class="popup-answer"></span>
+		</p>
+		<p>
+			<small class="fechar"><button onclick="closePopup('popupDefeat')">X</button></small>
+		</p>
+	</div>
+
+	<div class="container">
+		<div class="box">
+			<img id="gif" width="300px" alt="Gif do Dia">
+		</div>
+
+		<div class="box">
+			<div id="board"></div>
+		</div>
+	</div>
+
+	<br>
+	<div id="answer"></div>
+
+	<!---------------------------- JS -------------------------------->
+	<script src="js/modolivre.js"></script>
+
+	<script>
+		// =================== barra de navegação ===================
+		const menuButton = document.querySelector('.menu');
+		const closeButton = document.querySelector('.closebtn');
+		const sidebar = document.getElementById('sidebar');
+
+		menuButton.addEventListener('click', () => {
+			sidebar.style.width = '250px';
+		});
+
+		closeButton.addEventListener('click', () => {
+			sidebar.style.width = '0';
+		});
+
+		// =================== modo escuro ===================
+		function toggleDarkMode() {
+			document.body.classList.toggle("dark");
+
+			// Troca ícone do modo (lua/sol)
+			const moonImg = document.querySelector('.moon img');
+			moonImg.src = document.body.classList.contains("dark") ? "img/lightmode.png"
+				: "img/darkmode.png";
+
+			// Troca cor da logo `DayLibras` (claro/escuro)
+			const logoImg = document.querySelector('header img[src*="logo"]');
+			if (logoImg) {
+				logoImg.src = document.body.classList.contains("dark") ? "img/darklogoalternativa.png"
+					: "img/logoalternativa.png";
+			}
+
+			// Troca cor do menu hamburguer (claro/escuro)
+			const menuImg = document.querySelector('.menu img');
+			if (menuImg) {
+				menuImg.src = document.body.classList.contains("dark") ? "img/darkmenu.png"
+					: "img/menu.png";
+			}
+
+			// Troca cor do login (claro/escuro)
+			const loginImg = document.querySelector('.box img[src*="login"]');
+			if (loginImg) {
+				loginImg.src = document.body.classList.contains("dark") ? "img/darklogin.png"
+					: "img/login.png";
+			}
+
+			// sound effect ao clicar no toggle
+			const audioSrc = document.body.classList.contains("dark") ? "audio/bubble-popLua.mp3"
+				: "audio/bubble-popSol.mp3";
+			const audio = new Audio(audioSrc);
+			audio.play();
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,566 @@
+body {
+  font-family: Candara;
+  text-align: center;
+
+  margin: 0;
+
+  background-color: #B7D4E6;
+  background-size: 100%;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  gap: 310px;
+  align-items: center;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  background: rgba(59, 59, 59, 0.642);
+  backdrop-filter: blur(5px);
+
+  overflow-x: hidden;
+  transition: 0.7s;
+  display: flex;
+  justify-content: left;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  margin-left: 25px;
+}
+
+.sidebar button {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  background: none;
+  border: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  text-shadow: 0 0 10px #fff, 0 0 5px rgb(0, 0, 0);
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.containerheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 50px 0;
+}
+
+.menu,
+.moon {
+  cursor: pointer;
+}
+
+.key-tile::selection {
+  background-color: transparent;
+}
+
+.key-tile:hover {
+  background-color: #b0e6ff;
+}
+
+.tile:hover {
+  background-color: #b0e6ff;
+  cursor: default !important;
+}
+
+.enter-key-tile::selection {
+  background-color: transparent;
+}
+
+.container::selection {
+  background-color: transparent;
+}
+
+.containerheader::selection {
+  background-color: transparent;
+}
+
+#answer {
+  font-size: 26px;
+}
+
+#gif {
+  border-radius: 190px;
+}
+
+/* Jogo */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container .box {
+  width: 30%;
+}
+
+#title {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#board {
+  width: 280px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile {
+  /* Box */
+  background-color: #00aaff46;
+  border: 2px solid black;
+  width: 45px;
+  /* Diminuído de 60px */
+  height: 45px;
+  /* Diminuído de 60px */
+  margin: 2.5px;
+  transition: 0.3s;
+
+  /* Text */
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.correct {
+  background-color: #75ca6d !important;
+  color: white;
+  border-color: white;
+}
+
+.present {
+  background-color: #b69c28 !important;
+  color: white;
+  border-color: white;
+}
+
+.absent {
+  background-color: #453f4b !important;
+  color: white;
+  border-color: white;
+}
+
+.keyboard-row {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-title {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key-tile {
+  width: 36px;
+  height: 40px;
+  margin: 1px;
+  border: 1px solid black;
+  cursor: pointer;
+  /* Text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter-key-tile,
+.altenter-key-tile {
+  width: 76px;
+  height: 40px;
+  margin: 1px;
+  border: 1px solid black;
+  background-color: #00aaff46;
+  cursor: pointer;
+
+  /* Text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.altenter-key-tile {
+  width: 36px;
+}
+
+/* Animação Letras */
+@keyframes slidein {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.tile.animate-letter {
+  animation: slidein 0.2s ease;
+}
+
+/* Animação Tremer Palavra Inválida */
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.animate-invalid-row {
+  animation: shake 0.3s;
+}
+
+/* Animação Zoom Palavra Válida */
+@keyframes zoom {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-valid-row {
+  animation: zoom 0.3s;
+}
+
+/* PopUp */
+.popup {
+  display: none;
+  justify-content: center;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  margin: auto;
+  width: 500px;
+  height: 75%;
+
+  background: rgba(59, 59, 59, 0.642);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup .fechar {
+  position: absolute;
+  background-color: transparent;
+  top: 8px;
+  right: 10px;
+}
+
+.fechar button {
+  background-color: transparent;
+  border: none;
+  margin: 10px 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.popup img {
+  border-radius: 50px;
+}
+
+.popup h1 {
+  text-shadow: 0 0 10px #fff, 0 0 20px rgb(0, 234, 255);
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+}
+
+.popup p {
+  color: white;
+  font-size: 20px;
+}
+
+.popup a {
+  color: white;
+  text-decoration: none;
+}
+
+.popup-answer {
+  font-weight: bold;
+  font-size: 28px;
+  color: #75ca6d;
+}
+
+#answer {
+  z-index: 10000;
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+}
+
+
+/* =================== modo escuro =================== */
+body.dark {
+  margin: 0;
+  background-image: url(../img/darkbg.png);
+  background-size: 100%;
+}
+
+body.dark .btn-cadastro {
+  background-color: #012447;
+}
+
+body.dark .btn-acessar {
+  background-color: #004080;
+}
+
+body.dark .input-group input {
+  background-color: #131212bb;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+
+body.dark .key-tile {
+  border: 1px solid white;
+  color: white;
+}
+
+body.dark .tile:hover,
+body.dark .key-tile:hover {
+  background-color: #0d8eca;
+}
+
+body.dark .enter-key-tile,
+body.dark .altenter-key-tile {
+  border: 1px solid white;
+  color: white;
+}
+
+body.dark .tile {
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+body.dark #answer {
+  color: rgb(255, 255, 255);
+}
+
+
+
+/*======================== Responsividade =======================*/
+@media (max-width: 768px) {
+  header {
+    gap: 90px;
+  }
+
+  .logo {
+    width: 250px;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .img {
+    width: 35px;
+  }
+
+  #gif {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .box {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  #board {
+    width: 100%;
+    height: auto;
+  }
+
+  .tile {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .keyboard-row {
+    width: 100%;
+  }
+
+  .key-tile,
+  .enter-key-tile {
+    width: 30px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  header img {
+    width: 30px;
+  }
+
+  .keyboard-row {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+  header {
+    gap: 70px;
+  }
+
+  .logo {
+    width: 220px;
+  }
+
+  .box {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    #gif {
+      width: 150%;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .tile {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .key-tile {
+    width: 33px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+  .enter-key-tile {
+    width: 70px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+
+  header img {
+    width: 25px;
+  }
+
+  .keyboard-row {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup {
+    display: none;
+    justify-content: center;
+    z-index: 10000;
+    position: fixed;
+    padding: 30px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 369px) {
+  .key-tile {
+    width: 26px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+  .enter-key-tile {
+    width: 50px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+}
