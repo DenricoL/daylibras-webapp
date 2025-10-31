@@ -1,0 +1,2 @@
+# Purpose
+DayLibras is a single-page web application that implements a word-guessing game focused on teaching Brazilian Sign Language (Libras). Players attempt to guess a daily Portuguese word within six tries, receiving visual feedback through tile colors and sign language animations via GIF assets. This document provides a high-level technical overview of the application's architecture, core components, and entry points.
