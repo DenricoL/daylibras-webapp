@@ -1,2 +1,4 @@
 # Purpose
-DayLibras is a single-page web application that implements a word-guessing game focused on teaching Brazilian Sign Language (Libras). Players attempt to guess a daily Portuguese word within six tries, receiving visual feedback through tile colors and sign language animations via GIF assets. This document provides a high-level technical overview of the application's architecture, core components, and entry points.
+DayLibras is a project developed at the Instituto Federal de São Paulo - Campos do Jordão.
+Inspired by the popular game 'Wordle', DayLibras main objective is to introduce the learning of LIBRAS (Brazilian Sign Language) into the daily lives of its users. 
+In the game, the user must observe the sign language gesture and guess the word, receiving color feedback on the letters with each attempt.
