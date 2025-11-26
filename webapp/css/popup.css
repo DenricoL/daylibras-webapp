@@ -1,0 +1,136 @@
+.popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  margin: auto;
+  width: 70%;
+  height: 85%;
+
+  background: rgba(0, 29, 37, 0.699);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.next-word-btn {
+  background-color: #75ca6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-btn {
+  background-color: #ca6d6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.next-word-btn:hover {
+  background-color: #5fb357;
+}
+
+.close-btn:hover {
+  background-color: #b35757;
+}
+
+.popup .popup-buttons {
+  position: relative;
+  background-color: transparent;
+}
+
+.popup img {
+  border-radius: 15px;
+}
+
+.popup h1 {
+  text-shadow: 0 0 10px #fff, 0 0 20px rgb(0, 234, 255);
+  color: rgb(255, 255, 255);
+  font-size: 4em;
+}
+
+.popup p {
+  color: white;
+  font-size: 2em;
+}
+
+.popup a {
+  color: white;
+  text-decoration: none;
+}
+
+.popup-answer {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #75ca6d;
+}
+
+#answer {
+  z-index: 10000;
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+}
+
+.popup-gif {
+  width: 30%;
+}
+
+@media ( max-width : 1580px) {
+	.popup h1 {
+		font-size: 2.5em;
+	}
+	.popup-gif {
+    	width: 25%;
+	}
+}
+
+@media ( max-width : 480px) {
+	.popup h1 {
+		font-size: 2.5em;
+	}
+	.popup-gif {
+    	width: 75%;
+	}
+	.popup p {
+    	font-size: 1.5em;
+	}
+	.close-btn, .next-word-btn {
+		font-size: 1.4em;
+	}
+}
+
+
+
+@media (max-width: 1360px), (max-height: 800px) {
+	#popupTutorial {
+		display: none !important;
+	}
+}

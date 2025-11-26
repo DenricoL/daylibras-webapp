@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DayLibras</title>
+	
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/sidebar.css">
+		<link rel="stylesheet" href="css/popup.css">
+	</head>
+	
+	<body>
+		<div class="containerheader">
+			<header>
+				<div class="menu">
+					<img src="img/menu.png" width="50px">
+				</div>
+				<a href="modolivre.html"> <img src="img/logoalternativa.png" class="logo"></a>
+				<div class="moon">
+					<img src="img/darkmode.png" width="50px" onclick="toggleDarkMode()">
+				</div>
+			</header>
+		</div>
+	
+		<div id="sidebar" class="sidebar">
+			<div class="items">
+				<button class="closebtn">x</button>
+
+					<button onclick="location.href='modolivre.html'">Modo Livre</button>
+					<button onclick="location.href='tutorial.html'">Tutorial</button>
+					<button onclick="location.href='about.html'">Sobre</button>
+
+			</div>
+		</div>
+	
+		<div id="popupVictory" class="popup">
+			<h1>Você venceu!</h1>
+	
+			<img src="gifs/fimdejogo/vitoria.gif" class="popup-gif">
+	
+			<br>
+			<p>Palavra: <br>
+				<span id="popup-answer-victory" class="popup-answer"></span>
+			</p>
+			<div class="popup-buttons">
+				<button class="next-word-btn" onclick="nextWord()">Próxima Palavra</button>
+				<button class="close-btn" onclick="closePopup('popupVictory')">Fechar</button>
+			</div>
+		</div>
+	
+		<div id="popupDefeat" class="popup">
+			<h1>Você perdeu!</h1>
+	
+			<img src="gifs/fimdejogo/derrota.gif" class="popup-gif">
+	
+			<br>
+			<p>Palavra correta: <br>
+				<span id="popup-answer-defeat" class="popup-answer"></span>
+			</p>
+			<div class="popup-buttons">
+				<button class="next-word-btn" onclick="nextWord()">Próxima Palavra</button>
+				<button class="close-btn" onclick="closePopup('popupDefeat')">Fechar</button>
+			</div>
+		</div>
+	
+		<div class="container">
+			<div class="box">
+				<img id="gif" width="460px" alt="Gif do Dia">
+			</div>
+	
+			<div class="box">
+				<div id="board"></div>
+			</div>
+		</div>
+	
+		<br>
+		<div id="answer"></div>
+	
+		<!---------------------------- JS -------------------------------->
+		<script src="js/modolivre.js"></script>
+		<script src="js/sidebar.js"></script>
+	</body>
+</html>
+
+
+
+

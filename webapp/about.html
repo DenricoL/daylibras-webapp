@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DayLibras</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<link rel="stylesheet" href="css/about.css">
+		<link rel="stylesheet" href="css/sidebar.css">
+	</head>
+
+	<body>
+		<div class="containerheader">
+			<header>
+				<div class="menu">
+					<img src="img/menu.png" width="40px">
+				</div>
+				<a href="index.html" class="logo"> <img src="img/logo.png"></a>
+				<div class="moon">
+					<img src="img/darkmode.png" width="40px" onclick="toggleDarkMode()">
+				</div>
+			</header>
+		</div>
+
+		<div id="sidebar" class="sidebar">
+			<div class="items">
+				<button class="closebtn">x</button>
+
+					<button onclick="location.href='modolivre.html'">Modo Livre</button>
+					<button onclick="location.href='tutorial.html'">Tutorial</button>
+					<button onclick="location.href='about.html'">Sobre</button>
+
+			</div>
+		</div>
+
+		<div class="containertext">
+			<h1>Sobre o Jogo</h1>
+			<p>O DayLibras é um projeto desenvolvido no Instituto Federal de São Paulo - Campos do Jordão. 
+			<br> Inspirado no popular jogo de palavras 'Wordle', o DayLibras tem como principal 
+			objetivo introduzir o aprendizado de LIBRAS no dia a dia dos usuários.</p>
+		</div>
+
+
+		<h1>Desenvolvedores </h1>
+		<div class="container">   
+			<figure class="snip1515">
+				<div class="profile-image">
+					<img src="img/sobre/bobinho.jpg" />
+				</div>
+
+				<figcaption>
+					<h3>Raissa Miranda</h3>
+					<h4>Backend & Frontend</h4>
+					<div class="icons">
+						<a href="https://www.linkedin.com/in/raissa-miranda-32988b2a8" target="_blank"><i class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/RaiiMiranda" target="_blank"><i class="fab fa-github"></i></a>
+					</div>
+				</figcaption>
+			</figure>
+
+			<figure class="snip1515">
+				<div class="profile-image">
+					<img src="https://avatars.githubusercontent.com/u/163703664?v=4" />
+				</div>
+
+				<figcaption>
+					<h3>Douglas Loureiro</h3>
+					<h4>UI/UX Designer</h4>
+					<div class="icons">
+						<a href="https://www.linkedin.com/in/douglas-enrico/" target="_blank"><i class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/DenricoL" target="_blank"><i class="fab fa-github"></i></a>
+					</div>
+				</figcaption>
+			</figure>
+
+			<figure class="snip1515">
+				<div class="profile-image">
+					<img src="https://avatars.githubusercontent.com/u/167335156?v=4" />
+				</div>
+
+				<figcaption>
+					<h3>Vinicius Chinaqui</h3>
+					<h4>Frontend</h4>
+					<div class="icons">
+						<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/Chinaqui" target="_blank"><i class="fab fa-github"></i></a>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+
+		<!---------------------------- JS -------------------------------->
+		<script src="js/main.js"></script>
+		<script src="js/sidebar.js"></script>
+	</body>
+</html>
+
+
+

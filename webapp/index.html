@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DayLibras</title>
+	
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/sidebar.css">
+		<link rel="stylesheet" href="css/popup.css">
+	</head>
+	
+	<body>
+		<div class="containerheader">
+			<header>
+				<div id="menu" class="menu">
+					<img src="img/menu.png" width="50px">
+				</div>
+				<a href="index.html"> <img src="img/logo.png" class="logo"></a>
+				<div class="moon">
+					<img src="img/darkmode.png" width="50px" onclick="toggleDarkMode()">
+				</div>
+			</header>
+		</div>
+	
+		<div id="sidebar" class="sidebar">
+			<div class="items">
+				<button class="closebtn">x</button>
+
+					<button onclick="location.href='modolivre.html'">Modo Livre</button>
+					<button onclick="location.href='tutorial.html'">Tutorial</button>
+					<button onclick="location.href='about.html'">Sobre</button>
+
+			</div>
+		</div>
+		
+		<div id="popupTutorial" class="popup">
+			<h1>Como Jogar</h1>
+		
+			<div class="containerTutorial">
+		         <div class="box">
+		             <h3>1- Observe o gesto: </h3>
+		             <img width="50%" src="gifs/pular.gif">
+		         </div>
+		
+		         <div class="box">
+		             <h3>2- Tente adivinhar a palavra de 5 letras expressada no gesto (você possui 6 tentativas) </h3>
+					 <p>Exemplo de tentativa: </p>
+					 <!-- Exemplo visual de tiles -->
+					<div style="display: flex; gap: 8px; margin: 16px 0; justify-content: center;">
+						<div style="width: 48px; height: 48px; color: #ffffff; background: #75ca6d; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">P</div>
+						<div style="width: 48px; height: 48px; color: #ffffff; background: #75ca6d; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">U</div>
+						<div style="width: 48px; height: 48px; color: #ffffff; background: #75ca6d; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">L</div>
+						<div style="width: 48px; height: 48px; color: #ffffff; background: #453f4b; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">G</div>
+						<div style="width: 48px; height: 48px; color: #ffffff; background: #b69c28; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">A</div>
+					</div>
+					
+					<div style="display: flex; flex-direction: row; align-items: flex-start; gap: 8px; margin: 16px 0; justify-content: center;">
+						<div style="">
+							<div style="margin: 10px 0; width: 48px; height: 48px; color: #ffffff; background: #75ca6d; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">P</div>
+							<div style="margin: 10px 0; width: 48px; height: 48px; color: #ffffff; background: #453f4b; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">G</div>
+							<div style="margin: 10px 0; width: 48px; height: 48px; color: #ffffff; background: #b69c28; border: 2px solid #bdbdbd; display: flex; align-items: center; justify-content: center; font-size: 2em; font-weight: bold; border-radius: 8px;">A</div>
+						</div>
+						
+						<div style="text-align: left;">
+							<h3 style="margin: 25px 0;">Letra está presente na palavra e na posição correta.</h3>
+							<h3 style="margin: 40px 0;">Letra não está presente na palavra.</h3>
+							<h3 style="margin: 40px 0;">Letra presente na palavra, mas em posição incorreta.</h3>
+						</div>
+					</div>
+				</div>
+		    </div>
+		        
+	        <div class="popup-buttons">
+				<button class="close-btn" onclick="closePopup('popupTutorial')">Jogar</button>
+			</div>
+		</div>
+	
+		<div id="popupVictory" class="popup">
+			<h1>Você venceu!</h1>
+	
+			<img src="gifs/fimdejogo/vitoria.gif" class="popup-gif">
+	
+			<br>
+			<p>Palavra do Dia: <br>
+				<span id="popup-answer-victory" class="popup-answer"></span>
+			</p>
+			<div class="popup-buttons">
+				<button class="next-word-btn" onclick="location.href='modolivre.html'">DayLibras Ilimitado</button>
+				<button class="close-btn" onclick="closePopup('popupVictory')">Fechar</button>
+			</div>
+		</div>
+	
+		<div id="popupDefeat" class="popup">
+			<h1>Você perdeu!</h1>
+	
+			<img src="gifs/fimdejogo/derrota.gif" class="popup-gif">
+	
+			<br>
+			<p>Palavra do dia era: <br>
+				<span id="popup-answer-defeat" class="popup-answer"></span>
+			</p>
+			<div class="popup-buttons">
+				<button class="next-word-btn" onclick="location.href='modolivre.html'">DayLibras Ilimitado</button>
+				<button class="close-btn" onclick="closePopup('popupDefeat')">Fechar</button>
+			</div>
+		</div>
+	
+		<div class="container">
+			<div class="box">
+				<img id="gif" width="460px" alt="Gif do Dia">
+			</div>
+	
+			<div class="box">
+				<div id="board"></div>
+			</div>
+		</div>
+	
+		<br>
+		<div id="answer"></div>
+	
+		<!---------------------------- JS -------------------------------->
+		<script src="js/main.js"></script>
+		<script src="js/sidebar.js"></script>
+	</body>
+</html>
+
