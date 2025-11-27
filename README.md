@@ -3,6 +3,8 @@ Este é um jogo de palavras inspirado no 'Wordle', onde o usuário deve adivinha
 
 # Como jogar 
 Neste jogo, o usuário deve adivinhar a palavra de 5 letras que o intérprete está expressando em LIBRAS. A cada tentativa, um feedback de cores é aprensentado nas letras, mostrando as letras presentes, ausentes ou em posição incorreta.
+<img width="363" height="259" alt="Captura de tela 2025-11-27 180940" src="https://github.com/user-attachments/assets/6b086493-40d6-48ac-a37b-a1156254d221" />
+
 
 # daylibras-webapp
 Neste repositório, há apenas a aplicação web do projeto, sem as funcionalidades de *back-end* presentes no projeto original, como o cadastro de usuário e resgistro de estatísticas do jogador.
