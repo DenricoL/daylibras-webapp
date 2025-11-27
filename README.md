@@ -8,7 +8,7 @@ Neste jogo, o usuário deve adivinhar a palavra de 5 letras que o intérprete es
 
 
 # daylibras-webapp
-Neste repositório, há apenas a aplicação web do projeto, sem as funcionalidades de *back-end* presentes no projeto original, como o cadastro de usuário e resgistro de estatísticas do jogador.
+Este repositório foi criado para testar o aplicativo, portanto há apenas a aplicação web do projeto, sem as funcionalidades de *back-end* presentes no projeto original, como o cadastro de usuários e resgistro de estatísticas de jogadores.
 
 # Sobre o projeto
 Esta aplicação faz parte de um projeto do IFSP-CJO e foi desenvolvida por Douglas Loureiro, Raissa Miranda e Vinicius Chinaqui.
