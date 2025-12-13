@@ -11,7 +11,7 @@ Neste jogo, o usuário deve adivinhar a palavra de 5 letras que o intérprete es
 Este repositório foi criado para testar o aplicativo, portanto há apenas a aplicação web do projeto, sem as funcionalidades de *back-end* presentes no projeto original, como o cadastro de usuários e resgistro de estatísticas de jogadores.
 
 # Sobre o projeto
-Esta aplicação faz parte de um projeto do IFSP-CJO e foi desenvolvida por Douglas Loureiro, Raissa Miranda e Vinicius Chinaqui.
+Esta aplicação faz parte de um projeto do IFSP-CJO e foi desenvolvida por Douglas Loureiro, Raissa Miranda e Vinicius Chinaqui. O aplicativo usa o modelo do VLibras para realizar os gestos em LIBRAS.
 
 # [Teste agora!](https://daylibras-webapp.vercel.app/index.html)
 [<img width="975" height="578" alt="Captura de tela 2025-11-27 173541" src="https://github.com/user-attachments/assets/45fccad8-24d2-40db-ab1c-592bee5a4171" />
