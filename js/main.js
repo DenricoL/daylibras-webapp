@@ -15,7 +15,7 @@ function removeAccentsAndLowercase(list) {
     return list.map(word => 
         word
             .toLowerCase()
-            .normalize("NFD")                // decompõe os caracteres acentuados ('é' = 'e' + '´')
+            .normalize("NFD")                
             .replace(/[\u0300-\u036f]/g, '') // remove os acentos
     );
 }
@@ -30,8 +30,7 @@ var guessList = removeAccentsAndLowercase(dictionary);
 guessList = guessList.concat(wordList);
 
 // Seleciona uma palavra por dia
-// Data de início (por exemplo, 1º de janeiro de 2022)
-const dataInicio = new Date(2022, 0, 1); // Mês em JS começa do 0 (0 = janeiro)
+const dataInicio = new Date(2025, 0, 1);
 
 // Data de hoje (sem hora)
 const hoje = new Date();
@@ -49,22 +48,13 @@ console.log("Palavra do dia:", word);
 // Função que roda depois que todo o HTML foi carregado
 window.onload = function()
 {
+    loadDarkMode();
     // pega o caminho do gif
     const gifPath = `gifs/${word.toLowerCase()}.gif`;
 
     // coloca ele no html
     const gifElement = document.getElementById("gif");
     gifElement.src = gifPath;
-
-    /*
-
-    // Função de Fallback para caso não encontra o gif
-    gifElement.onerror = function() {
-        // colocar algo para indicar que ocorreu um problema e a palavra do dia nao teve um gif
-        //this.src = "gifs/fallback.gif";
-    };
-
-    */
 
     intialize();
 }
@@ -435,3 +425,4 @@ function closePopup(id)
     document.getElementById('popupDefeat').style.display = 'none';
 	document.getElementById('popupTutorial').style.display = 'none';
 }
+

@@ -15,44 +15,66 @@ closeButton.addEventListener('click', () => {
 
 // Modo Escuro
 function toggleDarkMode() {
-	document.body.classList.toggle("dark");
+	const isDark = document.body.classList.toggle("dark");
 
-	// Troca Ã­cone do modo (lua/sol)
+	// salva preferência
+	localStorage.setItem("theme", isDark ? "dark" : "light");
+
+	updateDarkModeUI(isDark);
+
+	// som apenas no clique
+	const audioSrc = isDark
+		? "audio/bubble-popLua.mp3"
+		: "audio/bubble-popSol.mp3";
+
+	new Audio(audioSrc).play();
+}
+
+function updateDarkModeUI(isDark) {
 	const moonImg = document.querySelector('.moon img');
-	moonImg.src = document.body.classList.contains("dark") ? "img/lightmode.png"
-		: "img/darkmode.png";
-
-	// Troca cor da logo `DayLibras` (claro/escuro)
-	const logoImg = document.querySelector('header img[src*="logo"]');
-	if (logoImg) {
-		logoImg.src = document.body.classList.contains("dark") ? "img/darklogo.png"
-			: "img/logo.png";
+	if (moonImg) {
+		moonImg.src = isDark ? "img/lightmode.png" : "img/darkmode.png";
 	}
 
-	// Troca cor do menu hamburguer (claro/escuro)
+	const logoImg = document.querySelector('img.logo-main');
+	if (logoImg) {
+		logoImg.src = isDark ? "img/darklogo.png" : "img/logo.png";
+	}
+
+	const logoAltImg = document.querySelector('img.logo-alt');
+	if (logoAltImg) {
+		logoAltImg.src = isDark
+			? "img/darklogoalternativa.png"
+			: "img/logoalternativa.png";
+	}
+
+
 	const menuImg = document.querySelector('.menu img');
 	if (menuImg) {
-		menuImg.src = document.body.classList.contains("dark") ? "img/darkmenu.png"
-			: "img/menu.png";
+		menuImg.src = isDark ? "img/darkmenu.png" : "img/menu.png";
 	}
 
-	// Troca cor do login (claro/escuro)
 	const loginImg = document.querySelector('.box img[src*="login"]');
 	if (loginImg) {
-		loginImg.src = document.body.classList.contains("dark") ? "img/darklogin.png"
-			: "img/login.png";
-	}
-	
-	// Troca cor da imagem do perfil (claro/escuro)
-	const profileImg = document.querySelector('.picture img');
-	if (profileImg) {
-		profileImg.src = document.body.classList.contains("dark") ? "img/profile/lightProfile.png"
-			: "img/profile/picture.png";
+		loginImg.src = isDark ? "img/darklogin.png" : "img/login.png";
 	}
 
-	// sound effect ao clicar no toggle
-	const audioSrc = document.body.classList.contains("dark") ? "audio/bubble-popLua.mp3"
-		: "audio/bubble-popSol.mp3";
-	const audio = new Audio(audioSrc);
-	audio.play();
+	const profileImg = document.querySelector('.picture img');
+	if (profileImg) {
+		profileImg.src = isDark
+			? "img/profile/lightProfile.png"
+			: "img/profile/picture.png";
+	}
 }
+
+function loadDarkMode() {
+	const savedTheme = localStorage.getItem("theme");
+	const isDark = savedTheme === "dark";
+
+	if (isDark) {
+		document.body.classList.add("dark");
+	}
+
+	updateDarkModeUI(isDark);
+}
+

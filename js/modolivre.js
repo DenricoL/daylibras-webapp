@@ -97,6 +97,9 @@ function pickWord() {
 // Função que roda depois que todo o HTML foi carregado
 window.onload = function()
 {
+    // aplica o modo escuro se estiver ativado
+    loadDarkMode();
+
     // escolhe a palavra para este round (respeita palavras já acertadas)
     pickWord();
 
