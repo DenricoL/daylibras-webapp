@@ -56,6 +56,17 @@ window.onload = function()
     const gifElement = document.getElementById("gif");
     gifElement.src = gifPath;
 
+    // mostra direto o popup de vitória caso já tenha ganhado no dia   
+	if (hasWonToday(diasPassados)) {
+		gameOver = true;
+		playerWin = true;
+        
+
+
+		open();
+		return; 
+	}
+
     intialize();
 }
 
@@ -205,9 +216,9 @@ function processInput(e)
                 currTile.innerText = e.code[3]; // pega a letra digitada
 
                 // coloca a animação quando uma letra é digitada
-                currTile.classList.remove("animate-letter"); // reinicia a animação
-                void currTile.offsetWidth;                   // força reflow para reiniciar a animação
-                currTile.classList.add("animate-letter");    // aplica a animação
+                currTile.classList.remove("animate-letter"); 
+                void currTile.offsetWidth;                   
+                currTile.classList.add("animate-letter");  
 
                 col += 1;
             }
@@ -223,9 +234,9 @@ function processInput(e)
         let currTile = document.getElementById(row.toString() + '-' + col.toString());
 
         // coloca animação quando a letra é removida
-        currTile.classList.remove("animate-letter"); // reinicia a animação
-        void currTile.offsetWidth;                   // força reflow para reiniciar a animação
-        currTile.classList.add("animate-letter");    // aplica a animação
+        currTile.classList.remove("animate-letter"); 
+        void currTile.offsetWidth;                 
+        currTile.classList.add("animate-letter");    
 
         currTile.innerText = "";
     }
@@ -350,6 +361,9 @@ function update()
 		    gameOver = true;
 		    playerWin = true;
 
+            // salvando vitoria no localstrorage
+            saveDailyWin(diasPassados);
+
 		    // Se venceu na primeira tentativa, entao foi rodada perfeita
 		    const rodadaPerfeita = (row === 0);
 		    incrementCorrectAnswers(rodadaPerfeita);
@@ -424,5 +438,14 @@ function closePopup(id)
     document.getElementById('popupVictory').style.display = 'none';
     document.getElementById('popupDefeat').style.display = 'none';
 	document.getElementById('popupTutorial').style.display = 'none';
+}
+
+    function saveDailyWin(dayIndex) {
+	    localStorage.setItem("dailyWin", dayIndex.toString());
+    }
+
+    function hasWonToday(dayIndex) {
+	const savedDay = localStorage.getItem("dailyWin");
+	return savedDay !== null && Number(savedDay) === dayIndex;
 }
 
