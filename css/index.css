@@ -72,7 +72,7 @@ header {
 	cursor: pointer;
 }
 
-.logo img {
+.logo-main, .logo-alt {
 	margin-top: 15px;
 	width: 200px;
 }
@@ -430,11 +430,8 @@ body.dark #answer {
 	header {
 		gap: 30px;
 	}
-	.logo {
-		width: 250px;
-	}
-	.logo img {
-		width: 110px;
+	.logo-main, .logo-alt {
+		width: 170px;
 	}
 	.img {
 		width: 35px;
@@ -482,10 +479,10 @@ body.dark #answer {
 
 @media ( max-width : 480px) {
 	header {
-		gap: 30px;
+		gap: 50px;
 	}
-	.logo {
-		width: 220px;
+	.logo-main, .logo-alt {
+		width: 170px;
 	}
 	#gif {
 		width: 150%;
@@ -511,7 +508,7 @@ body.dark #answer {
 		font-size: 17px;
 	}
 	header img {
-		width: 25px;
+		width: 30px;
 	}
 	.keyboard-row {
 		width: auto;
