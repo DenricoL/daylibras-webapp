@@ -1,5 +1,5 @@
 # DayLibras
-Este é um jogo de palavras inspirado no 'Wordle', onde o usuário deve adivinhar um gesto de Língua Brasileira de Sinais (LIBRAS) em 6 tentativas, recebendo um feedback dinâmico de cores nas letras das tentativas. O jogo tem como principal objetivo introduzir um auxílio ao aprendizado de LIBRAS no dia a dia dos usuários.
+Este é um jogo de palavras inspirado no 'Wordle', onde o usuário deve adivinhar um gesto de Língua Brasileira de Sinais (LIBRAS) em 6 tentativas, recebendo um feedback dinâmico de cores nas letras das tentativas. O jogo tem como principal objetivo introduzir o aprendizado de LIBRAS no dia a dia dos usuários.
 
 # Como jogar 
 Neste jogo, o usuário deve adivinhar a palavra de 5 letras que o intérprete está expressando em LIBRAS. A cada tentativa, um feedback de cores é aprensentado nas letras, mostrando as letras presentes, ausentes ou em posição incorreta.
